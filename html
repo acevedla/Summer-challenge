@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wavelyn vs. William: The Ultimate Showdown</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>🎉 Wavelyn vs. William: The Ultimate Showdown 🎉</h1>
+
+  <div class="container">
+    <div class="contestant" id="wavelyn">
+      <h2>💫 Wavelyn 💫</h2>
+      <div class="score" id="wavelyn-score">0</div>
+      <button onclick="changeScore('wavelyn', 1)">+1</button>
+      <button class="subtract" onclick="changeScore('wavelyn', -1)">-1</button>
+    </div>
+
+    <div class="contestant" id="william">
+      <h2>🔥 William 🔥</h2>
+      <div class="score" id="william-score">0</div>
+      <button onclick="changeScore('william', 1)">+1</button>
+      <button class="subtract" onclick="changeScore('william', -1)">-1</button>
+    </div>
+  </div>
+
+  <div class="challenges">
+    <h3>🎯 Current Challenges</h3>
+    <div class="challenge-item">
+      <span id="wavelyn-challenge" class="challenge-text">Wavelyn's Challenge: Learn something new about her new classmates.</span>
+      <button class="challenge-complete" onclick="completeChallenge('wavelyn')">Complete ✅</button>
+    </div>
+    <div class="challenge-item">
+      <span id="william-challenge" class="challenge-text">William's Challenge: Learn the names of his classmates.</span>
+      <button class="challenge-complete" onclick="completeChallenge('william')">Complete ✅</button>
+    </div>
+  </div>
+
+  <footer>
+    🏆 Let the games begin! First to 10 wins eternal glory!
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
