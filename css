@@ -1,0 +1,124 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(to right, #ffe259, #ffa751);
+  text-align: center;
+  margin: 0;
+  padding: 30px;
+  color: #222;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.contestant {
+  background: linear-gradient(to bottom right, #f9f9f9, #e0e0e0);
+  border: 4px solid #333;
+  border-radius: 25px;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+  animation: bounce 1s infinite alternate ease-in-out;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
+.contestant h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.score {
+  font-size: 4rem;
+  margin: 20px 0;
+  color: #ff4444;
+  font-weight: bold;
+}
+
+button {
+  font-size: 1.2rem;
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.subtract {
+  background-color: #f44336;
+}
+
+.subtract:hover {
+  background-color: #d73833;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.challenges {
+  margin-top: 40px;
+  padding: 20px;
+  background: #fff8dc;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+}
+
+.challenges h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.challenge-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.challenge-text {
+  flex: 1;
+}
+
+.challenge-complete {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
