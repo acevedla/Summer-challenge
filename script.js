@@ -3,12 +3,12 @@ const scores = {
   william: 0
 };
 
-const challenges = [
-  'wavelyn',
-  'william',
-  'wavelyn-extra',
-  'william-extra',
-  'bonus-pickle'
+const challengeIds = [
+  'challenge-wavelyn',
+  'challenge-william',
+  'challenge-wavelyn-extra',
+  'challenge-william-extra',
+  'challenge-bonus-pickle'
 ];
 
 function loadState() {
@@ -20,10 +20,9 @@ function loadState() {
     updateDisplay('william');
   }
 
-  challenges.forEach(challenge => {
-    if (localStorage.getItem(`challenge_${challenge}`) === 'true') {
-      document.getElementById(`${challenge}-challenge`)?.classList.add('completed');
-      document.getElementById(challenge)?.classList.add('completed');
+  challengeIds.forEach(id => {
+    if (localStorage.getItem(id) === 'true') {
+      document.getElementById(id)?.classList.add('completed');
     }
   });
 }
@@ -47,8 +46,23 @@ function completeChallenge(id) {
   const elem = document.getElementById(id);
   if (elem) {
     elem.classList.add('completed');
-    localStorage.setItem(`challenge_${id}`, 'true');
+    localStorage.setItem(id, 'true');
   }
+}
+
+function resetGame() {
+  // Reset scores
+  scores.wavelyn = 0;
+  scores.william = 0;
+  updateDisplay('wavelyn');
+  updateDisplay('william');
+  localStorage.removeItem('scores');
+
+  // Reset challenges
+  challengeIds.forEach(id => {
+    document.getElementById(id)?.classList.remove('completed');
+    localStorage.removeItem(id);
+  });
 }
 
 window.onload = loadState;
