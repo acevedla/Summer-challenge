@@ -3,6 +3,14 @@ const scores = {
   william: 0
 };
 
+const challenges = [
+  'wavelyn',
+  'william',
+  'wavelyn-extra',
+  'william-extra',
+  'bonus-pickle'
+];
+
 function loadState() {
   const savedScores = JSON.parse(localStorage.getItem('scores'));
   if (savedScores) {
@@ -12,16 +20,12 @@ function loadState() {
     updateDisplay('william');
   }
 
-  const completedWavelyn = localStorage.getItem('challenge_wavelyn');
-  const completedWilliam = localStorage.getItem('challenge_william');
-
-  if (completedWavelyn === 'true') {
-    document.getElementById('wavelyn-challenge').classList.add('completed');
-  }
-
-  if (completedWilliam === 'true') {
-    document.getElementById('william-challenge').classList.add('completed');
-  }
+  challenges.forEach(challenge => {
+    if (localStorage.getItem(`challenge_${challenge}`) === 'true') {
+      document.getElementById(`${challenge}-challenge`)?.classList.add('completed');
+      document.getElementById(challenge)?.classList.add('completed');
+    }
+  });
 }
 
 function updateDisplay(player) {
@@ -39,10 +43,12 @@ function changeScore(player, delta) {
   saveScores();
 }
 
-function completeChallenge(player) {
-  const textElem = document.getElementById(`${player}-challenge`);
-  textElem.classList.add('completed');
-  localStorage.setItem(`challenge_${player}`, 'true');
+function completeChallenge(id) {
+  const elem = document.getElementById(id);
+  if (elem) {
+    elem.classList.add('completed');
+    localStorage.setItem(`challenge_${id}`, 'true');
+  }
 }
 
 window.onload = loadState;
