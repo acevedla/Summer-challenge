@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -26,26 +27,35 @@
 
   <div class="challenges">
     <h3>🎯 Current Challenges</h3>
+
     <div class="challenge-item">
-      <span id="wavelyn-challenge" class="challenge-text">Wavelyn's Challenge: Learn something new about her new classmates.</span>
-      <button class="challenge-complete" onclick="completeChallenge('wavelyn')">Complete ✅</button>
+      <span id="challenge-wavelyn" class="challenge-text">Wavelyn's Challenge: Learn something new about her new classmates.</span>
+      <button class="challenge-complete" onclick="completeChallenge('challenge-wavelyn')">Complete ✅</button>
     </div>
+
     <div class="challenge-item">
-      <span id="william-challenge" class="challenge-text">William's Challenge: Learn the names of his classmates.</span>
-      <button class="challenge-complete" onclick="completeChallenge('william')">Complete ✅</button>
+      <span id="challenge-william" class="challenge-text">William's Challenge: Learn the names of his classmates.</span>
+      <button class="challenge-complete" onclick="completeChallenge('challenge-william')">Complete ✅</button>
     </div>
+
     <div class="challenge-item">
-      <span id="william-extra" class="challenge-text">William's Extra Challenge: Learn something new about one of your classmates.</span>
-      <button class="challenge-complete" onclick="completeChallenge('william-extra')">Complete ✅</button>
+      <span id="challenge-william-extra" class="challenge-text">William's Extra Challenge: Learn something new about one of your classmates.</span>
+      <button class="challenge-complete" onclick="completeChallenge('challenge-william-extra')">Complete ✅</button>
     </div>
+
     <div class="challenge-item">
-      <span id="wavelyn-extra" class="challenge-text">Wavelyn's Extra Challenge: Compliment a new classmate.</span>
-      <button class="challenge-complete" onclick="completeChallenge('wavelyn-extra')">Complete ✅</button>
+      <span id="challenge-wavelyn-extra" class="challenge-text">Wavelyn's Extra Challenge: Compliment a new classmate.</span>
+      <button class="challenge-complete" onclick="completeChallenge('challenge-wavelyn-extra')">Complete ✅</button>
     </div>
+
     <div class="challenge-item">
-      <span id="bonus-pickle" class="challenge-text">🍋 Bonus Challenge: Take a bite of a sour pickle!</span>
-      <button class="challenge-complete" onclick="completeChallenge('bonus-pickle')">Complete ✅</button>
+      <span id="challenge-bonus-pickle" class="challenge-text">🍋 Bonus Challenge: Take a bite of a sour pickle!</span>
+      <button class="challenge-complete" onclick="completeChallenge('challenge-bonus-pickle')">Complete ✅</button>
     </div>
+  </div>
+
+  <div class="reset-section">
+    <button class="reset-button" onclick="resetGame()">🔄 Reset Game</button>
   </div>
 
   <footer>
