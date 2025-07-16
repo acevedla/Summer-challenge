@@ -8,8 +8,12 @@ const challengeIds = [
   'challenge-william',
   'challenge-wavelyn-extra',
   'challenge-william-extra',
-  'challenge-bonus-pickle'
+  'challenge-bonus-pickle',
+  'challenge-wavelyn-new',
+  'challenge-william-animals',
+  'challenge-bonus-sackboy'
 ];
+
 
 function loadState() {
   const savedScores = JSON.parse(localStorage.getItem('scores'));
