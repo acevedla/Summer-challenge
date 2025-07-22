@@ -11,8 +11,12 @@ const challengeIds = [
   'challenge-bonus-pickle',
   'challenge-wavelyn-new',
   'challenge-william-animals',
-  'challenge-bonus-sackboy'
+  'challenge-bonus-sackboy',
+  'challenge-wavelyn-teach',
+  'challenge-william-help',
+  'challenge-bonus-handshake'
 ];
+
 
 
 function loadState() {
