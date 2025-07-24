@@ -66,9 +66,26 @@ function checkVictory() {
     if (banner && sound) {
       banner.style.display = 'block';
       sound.play();
+
+      // Launch confetti burst
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+
+      // Optional: repeat burst for added celebration
+      setTimeout(() => {
+        confetti({
+          particleCount: 100,
+          spread: 100,
+          origin: { y: 0.4 }
+        });
+      }, 500);
     }
   }
 }
+
 
 function resetGame() {
   scores.wavelyn = 0;
