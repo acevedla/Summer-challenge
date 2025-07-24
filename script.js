@@ -14,10 +14,10 @@ const challengeIds = [
   'challenge-bonus-sackboy',
   'challenge-wavelyn-teach',
   'challenge-william-help',
-  'challenge-bonus-handshake'
+  'challenge-bonus-handshake',
+  'challenge-wavelyn-lead',
+  'challenge-william-facts'
 ];
-
-
 
 function loadState() {
   const savedScores = JSON.parse(localStorage.getItem('scores'));
@@ -48,6 +48,7 @@ function changeScore(player, delta) {
   if (scores[player] < 0) scores[player] = 0;
   updateDisplay(player);
   saveScores();
+  checkVictory();
 }
 
 function completeChallenge(id) {
@@ -58,19 +59,30 @@ function completeChallenge(id) {
   }
 }
 
+function checkVictory() {
+  if (scores.wavelyn >= 10 && scores.william >= 10) {
+    const banner = document.getElementById('celebration');
+    const sound = document.getElementById('victory-sound');
+    if (banner && sound) {
+      banner.style.display = 'block';
+      sound.play();
+    }
+  }
+}
+
 function resetGame() {
-  // Reset scores
   scores.wavelyn = 0;
   scores.william = 0;
   updateDisplay('wavelyn');
   updateDisplay('william');
   localStorage.removeItem('scores');
 
-  // Reset challenges
   challengeIds.forEach(id => {
     document.getElementById(id)?.classList.remove('completed');
     localStorage.removeItem(id);
   });
+
+  document.getElementById('celebration').style.display = 'none';
 }
 
 window.onload = loadState;
